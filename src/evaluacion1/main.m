@@ -1,11 +1,12 @@
-# Evaluacion 1 - Metodo de factorizacion Cholesky
+# Evaluacion 1 - Metodo de factorizacion Cholesky 3x3
+# m -> matriz, e -> matriz igualdad
 
 clc;
+printf("Metodo de Factorizacion Cholesky\n\n");
 
+printf("Indique los valores de la matriz\n\n");
+m = [16, -12, 8; -12, 18, -6; 8, -6, 8]
 #{
-
-disp("Indique los valores de la matriz");
-
 for i = [1:3]
   
   for j = [1:3]
@@ -14,12 +15,10 @@ for i = [1:3]
   endfor
   
 endfor
+printf("\nMatriz, ")
+m
 
-#}
-
-#{
-
-disp("Indique los valores de la matriz igualdad");
+printf("\nIndique los valores de la matriz igualdad\n\n");
 
 for i = [1:3]
   
@@ -27,29 +26,21 @@ for i = [1:3]
   aux(i) = input('');  
   
 endfor
-
-e = [aux(1); aux(2); aux(3)];
-
 #}
+printf("\nMatriz igualdad, ")
+# e = [aux(1); aux(2); aux(3)]
+e = [76; -66; 46]
 
-a = [16, -12, 8; -12, 18, -6; 8, -6, 8];
-b = [76; -66; 46];
+input('presione enter para continuar');
+clc;
+  
+if(simetria(m) && defPositiva(m))
 
-# c = a \ b;
-
-l = [0,0,0; 0,0,0; 0,0,0];
-
-l(1,1) = sqrt(a(1,1));
-l(2,1) = a(2,1) / l(1,1);
-l(3,1) = a(3,1) / l(1,1);
-l(2,2) = sqrt(a(2,2)-(l(2,1)^2));
-l(3,2) = (a(3,2) - (l(3,1)*l(2,1))) / l(2,2);
-l(3,3) = sqrt(a(3,3) - (l(3,1)^2) - (l(3,2)^2));
-
-y = l \ b;
-
-lTras = l'
-
-x = lTras \ y
-
-
+  disp("Se puede realizar el metodo cholesky\n");
+  r = cholesky(m,e);
+  printf("Finalmente su resultado es: \n\n");
+  mostrarFinal(m,e,r,"x");  
+  
+else
+  disp("No puede realizar el metodo cholesky");
+endif
