@@ -3,11 +3,9 @@ function r = simetria(m)
    # m = matriz  
    # m' es la traspuesta de m
    
-  if (m == m')
-    # printf 'Es simetrica la matriz \n';
+  if (m == m')    
     r = true;
-  else
-    # printf 'No es simetrica la matriz \n';
+  else    
     r = false;
   endif
   
