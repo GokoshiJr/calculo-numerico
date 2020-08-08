@@ -1,12 +1,11 @@
-function r = simetria(m)  
+function r = simetria(m)
   
-   # m = matriz  
-   # m' es la traspuesta de m
-   
+  # m = matriz  
+  # m' es la traspuesta de m   
   if (m == m')    
     r = true;
   else    
     r = false;
-  endif
+  endif  
   
-endfunction
+endfunction # fin simetria()

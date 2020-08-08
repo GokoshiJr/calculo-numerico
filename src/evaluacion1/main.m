@@ -3,10 +3,9 @@
 
 clc;
 printf("Metodo de Factorizacion Cholesky\n\n");
-
 printf("Indique los valores de la matriz\n\n");
-m = [16, -12, 8; -12, 18, -6; 8, -6, 8]
-#{
+# m = [16, -12, 8; -12, 18, -6; 8, -6, 8]
+
 for i = [1:3]
   
   for j = [1:3]
@@ -15,9 +14,9 @@ for i = [1:3]
   endfor
   
 endfor
+
 printf("\nMatriz, ")
 m
-
 printf("\nIndique los valores de la matriz igualdad\n\n");
 
 for i = [1:3]
@@ -26,11 +25,10 @@ for i = [1:3]
   aux(i) = input('');  
   
 endfor
-#}
-printf("\nMatriz igualdad, ")
-# e = [aux(1); aux(2); aux(3)]
-e = [76; -66; 46]
 
+printf("\nMatriz igualdad, ")
+e = [aux(1); aux(2); aux(3)]
+# e = [76; -66; 46]
 input('presione enter para continuar');
 clc;
   
@@ -39,8 +37,10 @@ if(simetria(m) && defPositiva(m))
   disp("Se puede realizar el metodo cholesky\n");
   r = cholesky(m,e);
   printf("Finalmente su resultado es: \n\n");
-  mostrarFinal(m,e,r,"x");  
+  mostrarFinal(m,e,r,"x"); 
   
 else
+  
   disp("No puede realizar el metodo cholesky");
+  
 endif

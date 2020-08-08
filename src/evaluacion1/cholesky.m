@@ -44,8 +44,7 @@ function r = cholesky(m,e)
   input("\nPresione Enter para continuar");
   clc
   
-  # ---------------- Return ----------------
-  
+  # Return   
   r = x;
   
-endfunction
+endfunction # fin chelosky()
