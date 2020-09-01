@@ -1,5 +1,6 @@
   
-salir = false, cargar = false;
+salir = false; 
+cargar = false;
 clc;
 
 do
@@ -18,21 +19,27 @@ do
         cargarCoord();
         cargar = true;
       endif
+      
     case 2      
       if(cargar == true);        
-        L = interpolacion(x,y);
-        
+        poli = interpolacion(x,y);
+        poli;
       else
         disp("Cargue las coordenadas primero");
-      endif      
+      endif 
+      
     case 3
       if(cargar == true);        
         disp("Grafica");
+        poli;
+        graficar(poli);
+        
       else
         disp("Cargue las coordenadas primero");
       endif
+      
     case 4      
-      disp("Fin del Programa");
+      disp("Fin del Programa");      
       salir = true;
       
     otherwise
@@ -40,5 +47,3 @@ do
   endswitch
   
 until(salir == true);
-
-

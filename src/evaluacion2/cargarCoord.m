@@ -13,7 +13,7 @@ y = [45, 10, -235, -1, 0];
 ##endfor
 
 disp("\nPuntos Cargados")
-
+num = 5;
 for i = [1 : num]  
   fprintf("(x%d, y%d) = (%d, %d)\n", i-1, i-1, x(i), y(i));
 endfor
