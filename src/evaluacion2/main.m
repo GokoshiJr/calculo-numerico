@@ -1,49 +1,72 @@
   
-salir = false; 
+salir  = false; 
 cargar = false;
+iterar = false;
+inter  = false;
+linea  = ' -------------------------------------------';
 clc;
 
 do
-  disp("Evaluacion 2 - Interpolacion de Lagrange\n");
-  disp("1) Cargar coordenadas");
-  disp("2) Interpolacion")
-  disp("3) Grafica");
-  disp("4) Salir");
-  opc = input("Seleccione una opcion: ");
-  disp("")
+  disp(linea);
+  disp("  Evaluacion 2 - Interpolacion de Lagrange");
+  disp(linea);
+  disp("  1) Cargar coordenadas");
+  disp("  2) Iteraciones");
+  disp("  3) Interpolar Punto");
+  disp("  4) Grafica");
+  disp("  5) Salir");
+  disp(linea);
+  opc = input("  Seleccione una opcion: ");
+  
   
   switch (opc)
     
-    case 1
-      if (cargar == false);        
-        cargarCoord();
-        cargar = true;
-      endif
+    case 1        
+      coords = cargarCoord();        
+      cargar = true;
       
-    case 2      
+    case 2       
       if(cargar == true);        
-        poli = interpolacion(x,y);
-        poli;
+        poli   = iteraciones(coords.x, coords.y); 
+        iterar = true;       
       else
-        disp("Cargue las coordenadas primero");
+        clc;
+        disp("")
+        disp("  Cargue las coordenadas primero");
+        disp("")
       endif 
       
-    case 3
-      if(cargar == true);        
-        disp("Grafica");
-        poli;
-        graficar(poli);
-        
+    case 3      
+      if(cargar == true && iterar == true);                
+        ecuacion = interpolar(poli, coords.y, coords.x);
+        inter    = true;        
       else
-        disp("Cargue las coordenadas primero");
+        clc;
+        disp("")
+        disp("  Cargue las coordenadas y realice las iteraciones");
+        disp("")
+      endif 
+      
+    case 4
+      if(cargar == true && iterar == true && inter == true);
+        graficar(ecuacion, coords.x, coords.y);        
+      else
+        clc;
+        disp("")
+        disp("  Primero cargue las coordenadas, realice las iteraciones y obtenga el polinomio de interpolacion");
+        disp("")
       endif
       
-    case 4      
-      disp("Fin del Programa");      
+    case 5  
+      disp(linea);
+      disp("  Fin del Programa");
       salir = true;
       
     otherwise
-      disp("Ingrese una opcion valida\n");
+      clc;
+      disp('');
+      disp("  Ingrese una opcion valida\n");
+      
   endswitch
   
 until(salir == true);

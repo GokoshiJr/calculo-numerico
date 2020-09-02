@@ -1,69 +1,55 @@
 
-function mostrar(L, n, x, k)
+function mostrar(L, n, x, k)  
   
   limit = length(L); 
   numeros = [0];
+  i = k - 1;
+  fprintf(' Iteracion #%d\n\n', i);  
+  fprintf(' L%d(X) = ', i)
   
-  fprintf('Iteracion #%d\n\n', k);
-    
-  fprintf('L%d(X) = ', k-1)
-  for j = [1:limit]
+  for j = [1 : limit]    
     if (k ~= j)
-      numeros(k,j) = (j-1);
-      fprintf('(X-X%d)',numeros(k,j))
-      #fprintf('(X%d - X%d)',(i-1),j-1 );        
+      numeros(k, j) = (j - 1);
+      fprintf('(X-X%d)', numeros(k, j));              
     endif
   endfor
   
   fprintf(' / ')
   
-  for j = [1:limit]
-    if (k ~= j)
-      numeros(k,j) = (j-1);
-      #fprintf('(X-X%d)',numeros(i,j))
-      fprintf('(X%d-X%d)', (k-1), j-1 );        
-    endif
+  for j = [1 : limit]    
+    if (k ~= j)           
+      fprintf('(X%d-X%d)', i ,(j - 1));        
+    endif    
   endfor
   
-  disp("")
+  disp("")  
+  fprintf(' L%d(X) = ', i)
   
-  fprintf('L%d(X) = ', k-1)
-  for j = [1:limit]
-    if (k ~= j)
-      numeros(k,j) = (j-1);
-      fprintf('(X-(%d))', x(j))
-      #fprintf('(X%d - X%d)',(i-1),j-1 );        
+  for j = [1 : limit]
+    if (k ~= j)      
+      fprintf('(X-(%d))', x(j))             
     endif
   endfor
   
   fprintf(' / ')
   
-  for j = [1:limit]
-    if (k ~= j)
-      numeros(k,j) = (j-1);
-      #fprintf('(X-X%d)',numeros(i,j))
-      fprintf('(%d-(%d))', x(k), x(j));        
+  for j = [1 : limit]
+    if (k ~= j)     
+      fprintf('(%d-(%d))', x(k) ,x(j));        
     endif
   endfor
   
-  L(1)
-  disp("");
+  fprintf('\n L%d(X) = ', i)  
   aux = limit;
-  for j = [1:limit]
-      #fprintf('(X-X%d)',numeros(i,j))
-      fprintf(' (%d)X^%d ', L(j),aux-1);        
-      aux--;  
-      if(j ~= limit)    
-        fprintf(" + ");
-      endif  
+  
+  for j = [1 : limit]      
+    fprintf('(%d)X^%d ', L(j), aux - 1);        
+    aux--;  
+    if(j ~= limit)    
+      fprintf(" + ");
+    endif  
   endfor
-  
-  
-##    fprintf('entre (X%d-X%d)',numeros(i,j))
-##  esperar = input("\nPresione Enter para continuar");
-##  clc;
+
   fprintf('\n\n')
-  
-  
-  numeros;
+ 
 endfunction
