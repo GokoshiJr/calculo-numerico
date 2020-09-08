@@ -7,7 +7,7 @@ function r = cargarEcuacion()
   fprintf('%29s \n','Cargar Ecuacion');
   disp(linea);
   
-  fprintf('   1) Ecuacion --> e^x = N / X \n   2) Otra ecuacion\n') ;
+  fprintf('   1) Ecuacion --> e^x = N / x \n   2) Otra ecuacion\n') ;
   disp(linea);
   fprintf('   Opcion: ');
   opc = input('');
@@ -15,15 +15,19 @@ function r = cargarEcuacion()
   
   if (opc == 1) 
     
-    fprintf('  Indique el valor de N: ');
+    fprintf('  Indique el valor de N (N > 0): ');
     n = input('');
     fprintf('  Indique el valor del punto inicial x0: ');
-    xi = input('');
+    newton.xi = input('');
     fprintf('  Indique la tolerancia: ');
-    tol = input('');
-    disp(linea);    
-    fprintf('   Se ha cargado correctamente\n');
+    newton.tol = input('');
+    
     disp(linea);
+    fprintf('  %s%d\n','Ecuacion Cargada: y = (x * e^x) / ',n )
+    disp(linea);    
+    
+    newton.ecu = strcat('(x*e^x)/',mat2str(n));
+    
     esperar = input('   Presione Enter para continuar');
     
   elseif (opc == 2)
@@ -33,13 +37,8 @@ function r = cargarEcuacion()
     fprintf('   Ingrese una opcion valida por favor');
   endif
   
-  
-  
-  
-#  ecuacion.symbolic = strcat('(x*e^x)/', mat2str(n));
-#  ecuacion.N = n;
-#  ecuacion.xi = xi;
-  
+  clc;
   # return
-#  r = ecuacion;
+  r = newton;
+  
 endfunction

@@ -18,11 +18,10 @@ do
     
     case 1        
       disp('caso 1')
-      ecuacion = cargarEcuacion();
-      ecuacion
+      newton = cargarEcuacion();      
     case 2       
       disp('caso 2')
-      
+      iteraciones(newton);
     case 3      
       disp('caso 3')
       
