@@ -5,10 +5,11 @@ do
   disp(linea);
   disp("  Evaluacion 3 - Metodo de Newton-Raphson");
   disp(linea);
-  disp("  1) Cargar funcion");
-  disp("  2) Iteraciones");
-  disp("  3) Grafica");
-  disp("  4) Salir");
+  disp("  1) Cargar Funcion");
+  disp("  2) Cargar Datos");
+  disp("  3) Iteraciones");
+  disp("  4) Grafica");
+  disp("  5) Salir");
   disp(linea);
   opc = input("  Seleccione una opcion: ");
   switch (opc)    
@@ -17,10 +18,14 @@ do
       newton = cargarEcuacion(); 
       newton
     case 2
-      raphson(newton);
+      newton = cargarDatos(newton);
+      newton
     case 3      
-      disp('caso 3');      
-    case 4  
+      newton = raphson(newton); 
+      newton
+    case 4      
+      graficar(newton);     
+    case 5  
       disp(linea);
       disp("  Fin del Programa");
       salir = true;      
