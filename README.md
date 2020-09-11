@@ -7,6 +7,11 @@ This is the numerical calculus repository, where I use octave instead of matlab,
 ```git
 $ git clone https://github.com/GokoshiJr/calculo-numerico.git
 ```
+## Content
+
+- *[Cholesky Factoritation Method](https://github.com/GokoshiJr/calculo-numerico/tree/master/src/evaluacion1).*
+- *[Lagrange Interpolation](https://github.com/GokoshiJr/calculo-numerico/tree/master/src/evaluacion2).*
+- *[Newton-Raphson Method](https://github.com/GokoshiJr/calculo-numerico/tree/master/src/evaluacion3).*
 
 ## Contributing
 
