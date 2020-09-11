@@ -16,7 +16,7 @@ function r = cargarFuncion()
           fprintf('   Indique el valor de N (N > 0): ');
           n = input('');          
           if (n > 0)
-            fprintf('   %s%d\n','Ecuacion cargada f(x) = x * e^x - ', n)
+            fprintf('   %s%d\n','Funcion cargada f(x) = x * e^x - ', n)
             disp(linea);            
             nString = mat2str(n);
             newton.fun = strcat('x * e^x -', nString);
@@ -62,9 +62,9 @@ endfunction # fin cargarEcuacion()
 function r = mostrarTitulo(linea)  
   
   disp(linea);
-  fprintf('%28s \n','Cargar Ecuacion');
+  fprintf('%28s \n','Cargar Funcion');
   disp(linea);   
-  fprintf('   1) e^x = N / x \n   2) Otra ecuacion\n') ;
+  fprintf('   1) e^x = N / x \n   2) Otra funcion\n') ;
   disp(linea);
   fprintf('   Opcion: ');
   opc = input('');
