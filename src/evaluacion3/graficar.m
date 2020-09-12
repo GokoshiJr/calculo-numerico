@@ -14,7 +14,7 @@ function graficar(newton)
     hold on;    
     plot(x, y2);
   else    
-    ec1 = strrep(newton.fun, '^', '.^')
+    ec1 = strrep(newton.fun, '^', '.^');
     y1 = eval(ec1);
     plot(x, y1);
   endif
