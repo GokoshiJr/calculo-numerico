@@ -1,7 +1,8 @@
 
 linea  = ' -------------------------------------------';
 clc;
-salir = false;
+salir  = false;
+cargar = false;
 
 do
   try
@@ -12,14 +13,20 @@ do
     disp("  2) Resultado");    
     disp("  3) Salir");
     disp(linea);
-    opc = input("  Seleccione una opcion: ");
-    
+    opc = input("  Seleccione una opcion: ");    
     switch (opc)
       case 1        
         data = cargarDatos(); 
+        cargar = true;
       case 2
-        simpson(data);
-        case 3  
+        if(cargar)
+          simpson(data);
+        else
+          clc;
+          disp(linea);
+          disp("\n  Cargue los datos primero\n");
+        endif
+      case 3  
         disp(linea);
         disp("  Fin del Programa..."); 
         salir = true;
@@ -27,8 +34,7 @@ do
         clc;
         disp('');
         disp("  Ingrese una opcion valida\n");
-    endswitch
-    
+    endswitch    
   catch 
     clc;
     disp(linea);

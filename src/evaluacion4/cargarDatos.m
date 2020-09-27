@@ -1,8 +1,8 @@
 function r = cargarDatos()
   
   clc;
-  linea = ' -------------------------------------------';
-  salir = false;
+  linea  = ' -------------------------------------------';
+  salir  = false;
   salir2 = false;
   
   do
@@ -15,15 +15,15 @@ function r = cargarDatos()
         fprintf('   %s\n','Limite inferior a = 1');
         fprintf('   %s\n','Limite superior b = 2');
         disp(linea); 
-        data.a = 1;   
-        data.b = 2;
+        data.a   = 1;   
+        data.b   = 2;
         data.fun = 'x * log(x)';        
-        data.n = input('   Numero de subdivisiones (n): ');
+        data.n   = input('   Numero de subdivisiones (n): ');
         if ((data.n > 0) && (mod(data.n, 2) == 0)) 
           disp(linea); 
           esperar = input('   Presione Enter para continuar'); 
-          salir  = true;  
-          salir2 = true;
+          salir   = true;  
+          salir2  = true;
         else
           clc;
           disp(linea);
