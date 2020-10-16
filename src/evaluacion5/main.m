@@ -1,10 +1,11 @@
+
 linea  = ' ------------------------------------------------';
 clc;
 salir  = false;
 cargar = false;
 
 do
-#  try
+  try
     disp(linea);
     disp("  Evaluacion 5 - Metodo de Euler");
     disp(linea);
@@ -15,23 +16,21 @@ do
     opc = input("  Seleccione una opcion: ");    
     switch (opc)
       case 1   
-        data = cargarDatos()
-      case 2
-        # f = inline("y-x^2+1")
-        # euler(f, 0, 2, 0.5, 10)
-        # f = inline("x * sqrt(y)")
+        data = cargarDatos();
+      case 2        
         euler(data);
       case 3
+        clc;
         salir = true;
       otherwise
         clc;
         disp('');
         disp("  Ingrese una opcion valida\n");
     endswitch    
-#  catch 
-#    clc;
-#    disp(linea);
-#    disp("\n  Error(Caracter Invalido)\n");
-#  end_try_catch
+  catch 
+    clc;
+    disp(linea);
+    disp("\n  Error(Caracter Invalido)\n");
+  end_try_catch
   
 until(salir == true);
