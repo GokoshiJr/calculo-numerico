@@ -13,6 +13,7 @@ $ git clone https://github.com/GokoshiJr/calculo-numerico.git
 - *[Lagrange Interpolation](https://github.com/GokoshiJr/calculo-numerico/tree/master/src/evaluacion2).*
 - *[Newton-Raphson Method](https://github.com/GokoshiJr/calculo-numerico/tree/master/src/evaluacion3).*
 - *[1/3 Compuest Simpson Method](https://github.com/GokoshiJr/calculo-numerico/tree/master/src/evaluacion4).*
+- *[Euler Method](https://github.com/GokoshiJr/calculo-numerico/tree/master/src/evaluacion5).*
 
 ## Contributing
 
